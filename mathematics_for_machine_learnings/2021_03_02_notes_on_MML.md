@@ -86,4 +86,54 @@ $$\forall (A,B \in \mathbb{R}^{m \times n}), (C,D \in \mathbb{R}^{n \times p}) :
 
 3. **Symmetric Matrix**: A matrix $A$ is symmetric if $A=A^T$
 
-## 2.3 Solving Systems of Linear Equation
+## 2.3 Solving Systems of Linear Equations
+
+### 2.3.1 Particular and General Solution
+
+### 2.3.2 Elementary Transformation
+
+An **elementary transformation** is a transformation to a matrix
+that keeps the set of solutions that same. These include:
+1. Exchange of two equations
+2. Multiplication of a row by a constant
+3. Addition of two rows
+
+### 2.3.3 Row-Echelon Form
+
+A matrix $A$ is in **row-echelon form** if all rows that contain only zeros are
+at the bottom of the matrix. Looking at nonzero rows only, the first nonzero
+number from the left (also called the **pivot** or **leading coefficient**) is
+always strictly to the right of the row above it. **Reduced row -echelon form**
+enforces the same condition with the additions that 1) each pivot must be one
+and 2) the pivot must be the only non-zero entry in its column.
+
+### 2.3.4 Algorithms for Solving a System of Linear Equations
+
+To solve a system of the form $\mathbf{A}x=b$ (assuming a solution exists):
+
+1. If the inverse of $A$ exists, we can directly compute $x = A^{-1}b$.
+
+
+2. If $A$ has linearly independent columns, we can compute
+
+$$\mathbf{A}x=b \Longleftrightarrow \textbf{A}^T \textbf{A}x  = \textbf{A}^T b \\ \implies x = (\textbf{A}^T A)^{-1} \textbf{A}^T b $$
+
+
+## 2.4 Vector Spaces
+
+### 2.4.1 Groups
+
+#### Definition
+
+A set $\mathbb{G}$ and an operation $\otimes : \mathbb{G} \times \mathbb{G} \to \mathbb{G}$. If the following hold, the $\mathbb{G}$ is a group.
+
+1. Closure of $\mathbb{G}$ under $\otimes$: $\forall x,y \in \mathbb{G} : x \otimes y \in \mathbb{G}$
+2. Associativity: $\forall x,y,z \in \mathbb{G} : (x \otimes y) \otimes z = x \otimes (y \otimes z)$
+3. Neutral Element: $\exists e \in \mathbb{G}$ such that $\forall x \in \mathbb{G} : x \otimes e = x$ and $e \otimes x = x$
+4. Inverse Element: $\forall x \in \mathbb{G}$, $\exists y \in \mathbb{G}$ such that $x \otimes y = e$ and $y \otimes x = e$ where
+$e$ is the neutral element.
+
+A group is **Abellian** or **communtative** if $\forall x,y : x \otimes y = y \otimes x$
+
+
+### 2.4.2 Vector Spaces 
